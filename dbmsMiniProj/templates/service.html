@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/favicon.png" type="">
+
+  <title> DBMS </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+
+    
+    
+    window.onload = function what(){
+      $.ajax({
+                type: "POST",
+                url: "http://127.0.0.1:5000/checkAdmin",
+                contentType: "application/json",
+                success: function(response) 
+                {
+                  if(response==="not")
+                  {
+                    window.alert("Only admin can access this page");
+                    window.history.back();
+                  }
+                  console.log("load")
+                }
+              });
+    };
+    </script>
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="images/hero-bg.png" alt="">
+      </div>
+    </div>
+
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              DBMS Miniproject
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item ">
+                <a class="nav-link" href="index.html">Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"> About</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="service.html">AdminPage <span class="sr-only">(current)</span> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="why.html">For_users</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="team.html">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html"> <i class="fa fa-user" aria-hidden="true"></i> Login</a>
+              </li>
+              <form class="form-inline">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding">
+    <div class="service_container">
+      <div class="container ">
+        <div class="heading_container heading_center">
+          <h2>
+            Modify the <span>Database</span>
+          </h2>
+          <p>
+            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+          </p>
+        </div>
+        <!-- Add Book Form -->
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <h3>Add Book</h3>
+            <form action="" method="post">
+              <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" name="title" id="atitle" required>
+              </div>
+              <div class="form-group">
+                <label>Edition</label>
+                <input type="number" class="form-control" name="edition" id="aedi" required>
+              </div>
+              <div class="form-group">
+                <label>Author</label>
+                <input type="text" class="form-control" name="author" id="aauthor" required>
+              </div>
+              <div class="form-group">
+                <label>Quantity</label>
+                <input type="number" class="form-control" name="quantity" id="aquantity" required>
+              </div>
+              <div class="form-group">
+                <label>Book Type</label>
+                <select class="form-control" name="book_type" id="atype" required>
+                  <option value="textbooks">Textbook</option>
+                  <option value="journals">Journal</option>
+                  <option value="magazines">Magazine</option>
+                  <option value="novel">Novel</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Publisher</label>
+                <input type="text" class="form-control" name="publisher" id="apub" required>
+              </div>
+              <div class="form-group">
+                <label>Publisher email (contact)</label>
+                <input type="text" class="form-control" name="publisher_contact" id="apc" required>
+              </div>
+            </form>
+            <button type="submit" id="addbtn" class="btn btn-primary">Add Book</button>
+          </div>
+        </div>
+        <!-- Remove Book Form -->
+        <div class="row mt-5">
+          <div class="col-md-6 mx-auto">
+            <h3>Remove ALL Books of BOOKID</h3>
+            <form>
+              <div class="form-group">
+                <label>Book ID</label>
+                <input type="number" class="form-control" name="book_id" id="remID" required>
+              </div>
+            </form>
+            <button type="submit" id="removebtn" class="btn btn-danger">Remove Books</button>
+          </div>
+        </div>
+        <!-- Issue Book Form -->
+        <div class="row mt-5">
+          <div class="col-md-6 mx-auto">
+            <h3>Issue book</h3>
+            <form>
+              <div class="form-group">
+                <label>Book ID</label>
+                <input type="number" class="form-control" name="bookissue" id="ibook" required>
+              </div>
+              <div class="form-group">
+                <label>User ID</label>
+                <input type="number" class="form-control" name="user_id" id="userID" required>
+              </div>
+            </form>
+            <button type="submit" id="issuebtn" class="btn btn-primary">Issue book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        
+        document.getElementById("addbtn").addEventListener("click",function() 
+        {
+            console.log("Submitted");
+
+            var title = document.getElementById("atitle").value;
+            var author = document.getElementById("aauthor").value;
+            var quant = document.getElementById("aquantity").value;
+            var pub = document.getElementById("apub").value;
+            var type= document.getElementById("atype").value;
+            var edi = document.getElementById("aedi").value;
+            var pc = document.getElementById("apc").value;
+            
+            $.ajax({
+                type: "POST",
+                url: "http://127.0.0.1:5000/add_book",
+                data: JSON.stringify({title:title, author:author, Count:quant, publication:pub, type:type, Edition:edi, publication_contact: pc}),
+                contentType: "application/json",
+                success: function(response) 
+                {
+                  if(response==="Book added successfully")
+                  {
+                    window.alert("Book added to database");
+                  }
+                  else
+                  {
+                    window.alert("Retry");
+                  }
+                },
+                error: function(xhr, status, error) 
+                {
+                  console.error("AJAX request error:", error);
+                  alert("An error occurred. Please try again later.");
+                }
+            });
+        }); 
+
+
+        document.getElementById("removebtn").addEventListener("click",function() 
+        {
+            console.log("Submitted");
+
+            var remid = document.getElementById("remID").value;
+            
+            $.ajax({
+                type: "POST",
+                url: "http://127.0.0.1:5000/removebk",
+                data: JSON.stringify({remid:remid}),
+                contentType: "application/json",
+                success: function(response) 
+                {
+                  if(response==="removed")
+                  {
+                    window.alert("Book removed from database");
+                  }
+                  else
+                  {
+                    window.alert("Retry");
+                  }
+                },
+                error: function(xhr, status, error) 
+                {
+                  console.error("AJAX request error:", error);
+                  alert("An error occurred. Please try again later.");
+                }
+            });
+        }); 
+
+        document.getElementById("issuebtn").addEventListener("click",function() 
+        {
+            console.log("Issue");
+
+            var ibk = document.getElementById("ibook").value;
+            var iuser = document.getElementById("userID").value;
+            
+            $.ajax({
+                type: "POST",
+                url: "http://127.0.0.1:5000/issuebk",
+                data: JSON.stringify({bookID:ibk, userID:iuser}),
+                contentType: "application/json",
+                success: function(response) 
+                {
+                  if(response==="Book issued successfully.")
+                  {
+                    window.alert("Book issued successfully.");
+                  }
+
+                  else if(response==="error")
+                  {
+                    window.alert("An error occured");
+                  }
+
+                  else
+                  {
+                    window.alert("Retry");
+                  }
+                },
+                error: function(xhr, status, error) 
+                {
+                  console.error("AJAX request error:", error);
+                  alert("An error occurred. Please try again later.");
+                }
+            });
+        }); 
+
+
+    </script>
+
+
+  </body>
+</html>
