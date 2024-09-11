@@ -3,6 +3,25 @@
 ## Introduction
 Welcome to the College Library Management project! This project aims to provide an efficient system for managing the library resources of our college. It includes features for both frontend and backend management, offering a seamless experience for students, teaching staff, non-teaching staff, and administrators.
 
+## Tech Stack
+### Backend:
+Python: Backend programming language.
+Flask: Micro web framework for building the backend.
+MySQL: Relational database management system.
+
+### Frontend:
+HTML5: Structure of the web pages.
+CSS: Styling the web pages.
+JavaScript: Adding interactivity to web pages.
+jQuery: Simplifying JavaScript and AJAX operations.
+
+### IDE:
+VSCode: Code editor for development.
+
+### Dependencies:
+XAMPP: Tool for running MySQL and Apache server.
+phpMyAdmin: Web-based interface for managing MySQL databases.
+
 ## Features
 ### Frontend Features
 - **Display Available Books**: View a comprehensive list of all the books available in the library.
