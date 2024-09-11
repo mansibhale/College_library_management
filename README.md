@@ -5,22 +5,22 @@ Welcome to the College Library Management project! This project aims to provide 
 
 ## Tech Stack
 ### Backend:
-Python: Backend programming language.
-Flask: Micro web framework for building the backend.
-MySQL: Relational database management system.
+- Python: Backend programming language.
+- Flask: Micro web framework for building the backend.
+- MySQL: Relational database management system.
 
 ### Frontend:
-HTML5: Structure of the web pages.
-CSS: Styling the web pages.
-JavaScript: Adding interactivity to web pages.
-jQuery: Simplifying JavaScript and AJAX operations.
+- HTML5: Structure of the web pages.
+- CSS: Styling the web pages.
+- JavaScript: Adding interactivity to web pages.
+- jQuery: Simplifying JavaScript and AJAX operations.
 
 ### IDE:
-VSCode: Code editor for development.
+- VSCode: Code editor for development.
 
 ### Dependencies:
-XAMPP: Tool for running MySQL and Apache server.
-phpMyAdmin: Web-based interface for managing MySQL databases.
+- XAMPP: Tool for running MySQL and Apache server.
+- phpMyAdmin: Web-based interface for managing MySQL databases.
 
 ## Features
 ### Frontend Features
